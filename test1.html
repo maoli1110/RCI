@@ -1,0 +1,80 @@
+<!doctype  html>
+<html>
+<head>
+	<title>华美照相馆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth /750;
+        var ua = navigator.userAgent;
+        if(window.screen.height == 1200) {
+          //  document.write('<link href="css/style2.css" rel="stylesheet" />');
+        }
+        if(/Android (\d+\.\d+)/.test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            if(version > 2.3) {
+                document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/test.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js "></script>
+	<script src="js/wechat.js?v=1.0"></script>
+
+
+</head>
+<body>
+<span class="music"></span>
+<div class="page">
+    <section class="p0">
+        <span class="hand"></span>
+    </section>
+    <section class="p1" >
+        <a href="javascript:;" class="btn_start"></a>
+    </section>
+    <section class="p2"  style="display: none">
+        <a href="javascript:;" class="go30"></a>
+        <a href="javascript:;" class="go60"></a>
+        <a href="javascript:;" class="go80"></a>
+        <a href="javascript:;" class="go90"></a>
+    </section>
+    <section class="p3" style="display: none">
+        <a href="javascript:;" class="btn30"></a>
+    </section>
+    <section class="p4"  style="display: none">
+        <img src="images/t1.png" class="txt"/>
+        <div class="mypic" data-id="0">
+            <img src="images/pic.png" class="uploadimg" width="100%" style="display: none"/>
+        </div>
+        <div class="c-sex">
+            <span class="male on" data-id="1"></span>
+            <span class="female" data-id="0"></span>
+        </div>
+        <form  id='rightcmr' style='display:none'>
+            <input type='file' class='rightcamera'/>
+        </form>
+        <a href="javascript:;" class="btn_pic"></a>
+    </section>
+    <section class="p5"  style="display: none">
+        <img src="" class="ping"/>
+        <img src="images/t.png" class="save_t"/>
+        <a href="javascript:;" class="btn_back"></a>
+        <a href="javascript:;" class="btn_share"></a>
+    </section>
+</div>
+<div class="sharetips" style="display: none"></div>
+<canvas class="myCanvas" id="myCanvas" width="602px" height="842px" style="display: none" ></canvas>
+<img src="images/0.png" class="pin" id='pin' style="display: none"  />
+<span class="tips" style="display: none" ></span>
+<audio id="bgMusic" src="music/music.mp3" type="audio/mp3" loop  style="display: none">
+</body>
+
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>皇家加勒比</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript">
+      var phoneWidth = parseInt(window.screen.width);
+      var phoneScale = phoneWidth /750;
+      var ua = navigator.userAgent;
+      if(/Android (\d+\.\d+)/.test(ua)) {
+          var version = parseFloat(RegExp.$1);
+          if(version > 2.3) {
+              document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+          } else {
+              document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+          }
+      } else {
+          document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+      }
+    </script>
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container-wrap">
+      <div class="page1 container index1">
+        <div class="wrapper-top">
+        </div>
+        <div class="wave-wrapper">
+          <div class="ship-wrapper slower">
+            <div class="ship">
+              <img src="img/ship.png" alt="">
+            </div>
+          </div>
+          <div class="wave w1"></div>
+          <div class="wave w2"></div>
+          <div class="wave w3"></div>
+          <div class="wave w4"></div>
+        </div>
+        <div class="wrapper-footer">
+          <div class="up">
+            <img src="img/up.png" alt="">
+          </div>
+        </div>
+        <section class="p0">
+          <div class="mask" style="display:none;"></div>
+          <div class="cloud cloud-t slow">
+            <img src="img/t-cloud.png" alt="">
+          </div>
+          <div class="scroll scrollInP0 scrollInP2">
+            <div class="scroll-top"></div>
+            <div class="scroll-bottom"></div>
+            <div class="scroll-content"></div>
+          </div>
+          <div class="up">
+            <img src="img/up.png" alt="">
+          </div>
+        </section>
+      </div>
+      <!-- 促销页面 -->
+      <div class="page2">
+        <div class="page2_wrap">
+          <div class="sales_back" style="text-align: center; margin-top: 60px;">
+            <img src="img/back.png" alt="" >
+          </div>
+          <!-- mock -->
+          <div class="mock_title" hidden="" style="display: none;">
+            <div class="lz_title cur"></div>
+            <div class="gp_title"></div>
+          </div>
+          <!-- mock -->
+          <div class="container">
+            <div class="content">
+              <!-- banner -->
+              <div class="banner tab-content">
+                <div class="title-info sale_nav">爆款航次&nbsp;HOT SAILINGS
+                </div>
+                <div class="title-info phone_number">
+                  <img src="img/phonenumber.png" alt="">
+                </div>
+                <!-- 暂放图片 -->
+                <img src="img/tu1.png" alt="" style="width: 100%;">
+                <!-- 暂放图片 -->
+              </div>
+              <div class="line_container">
+                <!-- 航线title -->
+                <div class="line_title">
+                  <div class="lz_title cur"></div>
+                  <div class="gp_title"></div>
+                </div>
+                <div class="tabA">
+                  <!-- 暂放图片 -->
+                  <img src="img/tu2.png" alt="" style="width: 100%;">
+                  <!-- 暂放图片 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

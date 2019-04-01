@@ -1,0 +1,44 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            /**
+             * 统计信息收集开始
+             * @type @exp;_a
+             */
+            var _a = _a || {
+                si: 'f20735aca3a0eeb386d1ce62706c4108', //统计项目key
+                openid: 'openid',//微信openid
+                uuid: 'uuid',//微信uuid
+                uid: 'uid',//项目自带用户ID
+                gps: 'gps',//位置gps信息
+                nick: 'nick',//用户昵称
+                mobile: 'mobile',//用户手机号码
+            };
+            (function() {
+                var ana = document.createElement("script");
+                ana.src = "http://log.itsforcampaign.com/analytics.js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(ana, s);
+            })();
+            /**
+             * 统计信息收集结束
+             * 事件监测_a.push([事件类型, 事件对象, 事件额外信息]);
+             * 事件类型 (必选)
+             *          click："点击",
+             *          share："分享",
+             *          scorll: "滚动",
+             *          play: "播放",
+             *          download: "下载",
+             *          pageview: "页面浏览"
+             * 事件对象 (必选)   
+             *         按钮，图层，视频，等
+             */
+        </script>
+    </head>
+    <body>
+        <button onclick="_a.push(['click','Type','desc'])">事件监测</button>
+        <a href="javascript:_a.push(['redirect','Type','desc']),setTimeout(function(){location.href='http://www.baidu.com'}, 200)">跳转监测</a>
+    </body>
+</html>

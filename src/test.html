@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>皇家加勒比</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+	
+	<script src="jquery.min.js"></script>
+  </head>
+  <body>
+    <button onclick="getcount();"> 获取次数</button>
+    <button onclick="addcount();"> 增加次数</button>
+  </body>
+  
+  <script>
+	
+	var mobile = "13701863930";
+	
+	function getcount()
+	{	
+		$.post('a.php', { act : 'get_yhq_count' , mobile:mobile.toString()}, function(a){
+
+            if(!a.success)
+            {
+                alert(a.count);
+            }
+            else
+            {
+                alert(a.msg);
+            }
+
+        }, "json");
+	}
+	function addcount()
+	{
+		$.post('a.php', { act : 'save_count' , mobile:mobile.toString()}, function(a){
+
+            if(!a.success)
+            {
+                alert(a.msg);
+            }
+            else
+            {
+                alert(a.msg);
+            }
+
+        }, "json");
+	}
+  </script>
+</html>

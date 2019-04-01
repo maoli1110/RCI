@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>皇家加勒比</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript">
+      var phoneWidth = parseInt(window.screen.width);
+      var phoneScale = phoneWidth /750;
+      var ua = navigator.userAgent;
+      if(/Android (\d+\.\d+)/.test(ua)) {
+          var version = parseFloat(RegExp.$1);
+          if(version > 2.3) {
+              document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+          } else {
+              document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+          }
+      } else {
+          document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+      }
+    </script>
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="page1 container index1">
+      <div class="wrapper-top">
+      </div>
+      <div class="wave-wrapper">
+        <div class="ship-wrapper slower">
+          <div class="ship">
+            <img src="img/ship.png" alt="">
+          </div>
+        </div>
+        <div class="wave w0"></div>
+        <div class="wave w1"></div>
+        <div class="wave w2"></div>
+        <div class="wave w3"></div>
+        <div class="wave w4"></div>
+      </div>
+      <div class="wrapper-footer">
+        <div class="up">
+          <img src="img/up.png" alt="">
+        </div>
+      </div>
+      <section class="p0">
+        <div class="mask" style="display:none;"></div>
+        <div class="cloud cloud-t slow">
+          <img src="img/t-cloud.png" alt="">
+        </div>
+        <div class="scroll scrollInP0 scrollInP2">
+          <div class="scroll-top"></div>
+          <div class="scroll-bottom"></div>
+          <div class="scroll-content">
+          </div>
+        </div>
+        </div>
+        <div class="up">
+          <img src="img/up.png" alt="">
+        </div>
+      </section>
+    </div>
+    <!-- 促销页面 -->
+    <div class="page2">
+      <div class="page2_wrap">
+        <!-- mock -->
+        <div class="mock_title" hidden="" style="display: none;">
+          <div class="lz_title cur"></div>
+          <div class="gp_title"></div>
+        </div>
+        <!-- mock -->
+        <div class="container">
+          <div class="content">
+            <!-- banner -->
+            <div class="banner tab-content">
+              <div class="title-info sale_nav">爆款航次&nbsp;HOT SAILINGS
+              </div>
+              <div class="title-info phone_number">
+                <img src="img/phonenumber.png" alt="">
+              </div>
+              <!-- 注释banner -->
+              <!-- <ul class="tab-list">
+                <li>
+                  <img class="banner-img" src="http://placehold.it/600x224" alt="">
+                  <div class="flex">
+                    <div class="banner-left">
+                      <p><span class="banner-title">上海-福冈-长崎-上海</span><i class="hot text-center">超抢手!</i></p>
+                      <p>船名：<span class="boat">海洋量子号</span></p>
+                      <p>出发时间：<span class="time">2019-03-02 6天5晚</span></p>
+                    </div>
+                    <div class="banner-right">
+                      <h3 class="text-center room">双人阳台房</h3>
+                      <div class="flex">
+                        <div class="original">
+                          <p>第1/2人零售倡导价(含税)</p>
+                          <p><span class="origPrice">¥3728</span>/人起</p>
+                        </div>
+                        <div class="current">
+                          <p>第1/2人限时优惠价(含税)</p>
+                          <p><span class="origPrice">¥3728</span>/人起</p>
+                        </div>
+                      </div>
+                      <a class="text-center link" href="https://www.rcclchina.com.cn/content/taste/ships/QN">立即抢购</a>
+                    </div>
+                  </div>
+                </li>
+              </ul> -->
+              <!-- 注释 -->
+              <!-- 暂放图片 -->
+              <img src="img/tu1.png" alt="" style="width: 100%;">
+              <!-- 暂放图片 -->
+            </div>
+            <div class="line_container">
+              <!-- 航线title -->
+              <div class="line_title">
+                <div class="lz_title cur"></div>
+                <div class="gp_title"></div>
+              </div>
+              <div class="tabA">
+                <!-- 注释航线 -->
+                <!-- <div class="line_content">
+                    <a class="cursorShade" href="http://www.rcclchina.com.cn/Rccl.Cruise/CruiseDetail?shipCode=QN&amp;sailDate=2018-03-08&amp;%27,%27_blan&amp;" target="_blank"></a>
+                    <img src="img/line_new.png" alt="" class="line_img">
+                    <div class="line_left">
+                      <div class="line_lineName">
+                            <p class="line_lineName_p">上海-长崎-上海</p>
+                            <p class="line_lineTime_p">出发时间：2019-01-01</p>
+                            <p class="line_lineDay_p">晚数：4晚</p>
+                        </div>
+                        <div class="line_lineTimeTag">
+                            <span class="line_lineTag">女神节<img src="images/ns.png" class="tagImg yh" style="display: none;"></span>
+                            <span class="line_lineTag">优惠券额外再减<img src="images/proceed.png" class="tagImg"></span>
+                        </div>
+                    </div>
+                    <div class="line_right">
+                        <div class="line_price">
+                            <div class="dBalcony">
+                                <p class="p1">双人阳台房</p>
+                                <p class="p2">第1/2人零售指导价(含税)</p>
+                                <p class="p2 marked">¥4223/人起</p>
+                                <p class="p4">¥2690/人起</p>
+                                <p class="p5">第1/2人零售指导价(含税)</p>
+                                <p class="p6">¥2690/人起</p>
+                            </div>
+                        </div>
+                        <a class="line_book" href="javascript:void(0)">立即预订</a>
+                        <p class="p7">注册会员即可抢购</p>
+                    </div>
+                </div> -->
+                <!-- 注释航线 -->
+                <!-- 暂放图片 -->
+                <img src="img/tu2.png" alt="" style="width: 100%;">
+                <!-- 暂放图片 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+  </body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>皇家加勒比</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      var phoneWidth = parseInt(window.screen.width);
+      var phoneScale = phoneWidth /750;
+      var ua = navigator.userAgent;
+      if(/Android (\d+\.\d+)/.test(ua)) {
+          var version = parseFloat(RegExp.$1);
+          if(version > 2.3) {
+              document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi, user-scalable=no, viewport-fit=contain">');
+          } else {
+              document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi, user-scalable=no, viewport-fit=contain">');
+          }
+      } else {
+          document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi, viewport-fit=contain">');
+      }
+    </script>
+	
+	
+	<script type="text/javascript">
+		
+		function getQueryVariable(variable) {
+		  var query = window.location.search.substring(1);
+		  var vars = query.split("&");
+		  for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			if (pair[0] == variable) { return pair[1]; }
+		  }
+		  return (false);
+		}
+
+		var version = getQueryVariable('v');
+		
+		//获取用户openid
+		var openid = decodeURIComponent(getQueryVariable('info'));
+	
+		/**
+		 * 统计信息收集开始
+		 * @type @exp;_a
+		 */
+		var _a = _a || {
+                si: ' 70201901287036 ', //统计项目key
+                openid: openid, //第三方平台授权ID，例如微信openid、
+                uuid: 'uuid', //第三方平台唯一 ID，例如微信uuid
+                gps: 'gps', //位置gps信息
+                nick: 'nick', //用户昵称
+                mobile: "", //用户手机号码
+                hmt_key: 'f20735aca3a0eeb386d1ce62706c4108', //加载百度统计的key
+                ga_key: '', //加载google统计的key
+            };
+
+		 (function() {
+                var ana = document.createElement("script");
+                ana.src = "http://log.itsforcampaign.com/a.1.1.js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(ana, s);
+            })();
+
+			 
+		 /**
+		 *事件监听
+		 *luck_draw 摇一摇
+		 *get_coupon 获取礼包
+		 *
+		 */
+		 function clickEvent(eventname)
+		 {
+			if (_a != null)
+			{
+				//_a.push(['_trackEvent', 'button', 'click', eventname, '']);
+				//_a.push(['click','button',eventname]);
+			}			
+		 }
+		 
+		 /**
+		 *跳转检测
+		 *linename 命名规范 click_line(航线名) 航线点击
+		 *url 跳转的URL
+		 */
+		 function clickShip(linename , url)
+		 {
+			//_a.push(['redirect','button',linename]),setTimeout(function(){location.href=url}, 200);
+		 }
+		 
+	</script>
+	
+    <script type='text/javascript'>
+	
+      !function (e, t, n, g, i) { e[i] = e[i] || function () { (e[i].q = e[i].q || []).push(arguments) }, n = t.createElement("script"), tag = t.getElementsByTagName("script")[0], n.async = 1, n.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + g, tag.parentNode.insertBefore(n, tag) }(window, document, "script", "http://assets.growingio.com/2.1/gio.js", "gio");
+      gio('init', 'a8566cfbe0547f7a', {});
+
+      gio('send');
+	  
+    </script>
+
+    <!--baidu track-->
+	<script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a2e296d8e3356d478938fcfe6a8d4890";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script> 
+	
+	
+
+    <script type="text/javascript" language="javascript" src="https://tongji.baidu.com/static/tongji/analytics/hm-rcl-m.js"></script>
+    <script>RCLTracker._setAutoTrackingTags(['a', 'button', 'label', 'span', 'img', 'p', 'div']);</script>
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    
+
+    <script type="text/javascript">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'itm.start': new Date().getTime(), event: 'itm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'ITM_dataLayer' ? '&l=' + l : '';
+        j.async = true; j.src = 'https://itm.xfyun.cn/itm.js/?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'ITM_dataLayer', 'ITM-5a83e9b9');
+    </script>
+
+    <!-- utag -->
+    <script type="text/javascript">
+	
+      (function(a,b,c,d){
+        a='http://tags.tiqcdn.com/utag/rccl/gdp-rcl-china/prod/utag.js'; //'dev','qa' are other values instead of 'prod'
+        b=document;c='script';d=b.createElement(c);d.src=a;
+        d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a)
+      })();
+	  
+    </script>	
+	
+  </head>
+  <body>
+    <div class="loading">
+      <div class="wave-wrapper">
+        <div class="ship-wrapper slower">
+          <div class="ship">
+            <img src="img/load-ship.png" alt="">
+          </div>
+        </div>
+        <div class="wave w1"></div>
+        <div class="wave w2"></div>
+        <div class="wave w3"></div>
+        <div class="wave w4"></div>
+        <div class="loading-percent"></div>
+      </div>
+    </div>
+    <div class="container index" style="display:none;">
+      <div class="rule-btn">游戏规则</div>
+      <div class="rule-mask" style="display:none;">
+        <div class="rule-content">
+          <a class="rule-close" href="javascript:;">&times;</a>
+          <img src="img/rule.jpg" alt="">
+        </div>
+      </div>
+      <div class="mobileshake">
+        <div class="img">
+          <img src="img/mobileshake.png" alt="">
+        </div>
+        <p>摇一摇抽签</p>
+      </div>
+      <div class="wrapper-top">
+        <div class="click-shake-area">点击摇一摇激活区域</div>
+        <img src="img/wrapper1.png" alt="">
+        <div class="pendant left"></div>
+        <div class="pendant right"></div>
+        <!-- <div class="title sh text-center" style="display: none;">
+          <img src="img/logo.png" alt="">
+          <img src="img/title2988.png" alt="">
+        </div> -->
+        <div class="title text-center">
+          <img src="img/logo.png" alt="">
+          <img style="transform: scale(1.2);" src="img/title.png" alt="">
+        </div>
+      </div>
+      <div class="wave-wrapper">
+        <div class="ship-wrapper slower">
+          <div class="ship">
+            <img src="img/ship.png" alt="">
+          </div>
+        </div>
+        <div class="wave w0"></div>
+        <div class="wave w1"></div>
+        <div class="wave w2"></div>
+        <div class="wave w3"></div>
+        <div class="wave w4"></div>
+      </div>
+      <div class="wrapper-footer text-center">
+        <p class="indextext">
+            *量子号指定航次阳台房享每舱享立减优惠
+        </p>
+        <!-- <img class="indextext sh" src="img/indextext2988.png" alt="">
+        <img class="indextext tj" src="img/indextext3788.png" alt="" style="display:none;"> -->
+        <img src="img/wrapper2.png" alt="">
+      </div>
+      <div class="up">
+        <img src="img/up.png" alt="">
+      </div>
+      <div class="cloud cloud-t slow" style="display:none;">
+        <img src="img/t-cloud.png" alt="">
+      </div>
+      <section class="p0">
+        <div class="pot-wrapper">
+          <div class="pot">
+            <img src="img/pot.png" alt="">
+          </div>
+          <div class="sticker sticker1">
+            <img src="img/1.png" alt="">
+          </div>
+          <div class="sticker sticker2">
+            <img src="img/2.png" alt="">
+          </div>
+          <div class="sticker sticker3">
+            <img src="img/3.png" alt="">
+          </div>
+          <div class="sticker sticker4">
+            <img src="img/4.png" alt="">
+          </div>
+          <div class="sticker sticker5">
+            <img src="img/5.png" alt="">
+          </div>
+          <div class="sticker sticker6">
+            <img src="img/6.png" alt="">
+          </div>
+        </div>
+        <div class="cloudbg">
+          <img src="img/cloudbg.png" alt="">
+        </div>
+        <div class="flower">
+          <img src="img/flower.png" alt="">
+        </div>
+        <div class="straw">
+          <img src="img/straw.png" alt="">
+        </div>
+        <div class="potshakebg" style="display:none">
+          <img src="img/potshakebg.png" alt="">
+        </div>
+        <div class="mask" style="display:none;"></div>
+        <!-- <div class="sh"> -->
+          <div class="gift" style="display:none;">
+            <img src="img/gift.png" alt="">
+          </div>
+        <!-- </div> -->
+        <!-- <div class="tj">
+          <div class="gift" style="display:none;">
+            <img src="img/giftcircl3788.png" alt="">
+          </div>
+        </div> -->
+        <div class="beam faster" style="display:none;">
+          <img src="img/light.png" alt="">
+        </div>
+        <div class="cloud cloud-l" style="display:none;">
+          <img src="img/l-cloud.png" alt="">
+        </div>
+        <div class="cloud cloud-r" style="display:none;">
+          <img src="img/r-cloud.png" alt="">
+        </div>
+       
+        <div class="scroll scrollInP0" style="display:none;"><!---->
+          <div class="scroll-top"></div>
+          <div class="scroll-bottom"></div>
+          <div class="scroll-content">
+            <div class="content-wrapper">
+              <div class="content">
+                <div class="content-top">
+                  <img style="padding-top: 80px;" src="img/logo.png" alt="">
+                  <img style="padding-top: 5%;padding-bottom: 22px;width: 40%;" src="img/contentgift.png" alt="">
+                  <!-- <img class="tj" style="padding-top: 40px;padding-bottom: 30px;width: 40%;display: none;" src="img/gift3788.png" alt=""> -->
+                  <a class="login" style="width:220px;letter-spacing:5px" href="javascript:;">
+                    快来领取
+                  </a>
+                  <!-- <div style="color: rgb(227, 40, 0);
+                  line-height: 2;">登陆即可领取</div> -->
+                  <!-- href="./index1.html"-->
+                  <div class="custom-line"></div>
+                  <img style="padding-top:5%;width: 45%;" src="img/contenttext.png" alt="">
+                  <div class="scroll-wave"><!--style="position: absolute;top: calc(100% - 236px);"-->
+                    <img src="img/scrollbgwave.png" alt="">
+                  </div>
+                </div>
+                <div class="campaign"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticker-result" style="display:none">
+          <a class="sticker-close" href="javascript:;">&times;</a>
+          <img src="" alt="">
+          <p class="text-red text-center tip">长按图片保存，分享新年幸运签</p>
+        </div>
+      </section>
+      <section class="p1">
+        <div class="scroll scrollInP1" style="display:none">
+          <div class="scroll-top"></div>
+          <div class="scroll-bottom"></div>
+          <div class="scroll-content">
+            <div class="tab-container">
+              <ul class="tab-btns original-btns flex"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-up-p1" style="display:none;">
+          <a href="javascript:;">
+            <img src="img/back.png" alt="">
+          </a>
+        </div>
+      </section>
+    </div>
+    <div class="container coupon index1" style="display:none">
+      <div class="wrapper-top"></div>
+      <div class="wave-wrapper">
+        <div class="ship-wrapper slower">
+          <div class="ship">
+            <img src="img/ship.png" alt="">
+          </div>
+        </div>
+        <div class="wave w0"></div>
+        <div class="wave w1"></div>
+        <div class="wave w2"></div>
+        <div class="wave w3"></div>
+        <div class="wave w4"></div>
+      </div>
+      <div class="wrapper-footer">
+        <!-- <img src="img/wrapper2.png" alt=""> -->
+      </div>
+      <div class="up">
+          <img src="img/up.png" alt="">
+        </div>
+      <div class="cloud cloud-t slow">
+        <img src="img/t-cloud.png" alt="">
+      </div>
+      <section class="p0">
+        <div class="scroll scrollInP2" style="display:none;">
+          <div class="scroll-top"></div>
+          <div class="scroll-bottom"></div>
+          <div class="scroll-content">
+            <div class="content-wrapper">
+              <div class="content">
+                <div class="content-top">
+                  <img style="padding-top: 80px;" src="img/logo.png" alt="">
+                  <div class="coupon-content success" style="display:none">
+                      <p>您已获得以下优惠券</p>
+                      <div class="custom-line"></div>
+                    <img src="img/coupon.png" alt="">
+                    <img src="img/coupon.png" alt="">
+                    <img src="img/coupon.png" alt="">
+                  </div>
+                  <div class="coupon-content fail" style="display:none">
+                    <p>您已领取以下优惠券</p>
+                    <div class="custom-line"></div>
+                    <img src="img/coupongray.png" alt="">
+                    <img src="img/coupongray.png" alt="">
+                    <img src="img/coupongray.png" alt="">
+                  </div>
+                  <div class="flex coupon-btns">
+                    <a href="javascript:;" class="gosale">
+                      <img src="img/couponbtn1.png" alt="">
+                    </a>
+                    <a href="javascript:;" class="checkcoupon">
+                      <img src="img/couponbtn2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="scroll-wave">
+                    <img src="img/scrollbgwave.png" alt="">
+                  </div>
+                </div>
+                <div class="campaign"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 爆款模板 -->
+    <template id="hotsale-instance">
+      <div class="hotsale-instance">
+        <div>
+          <div style="margin-bottom: -34px;">
+            <img class="banner-img" src="http://placehold.it/580x326" alt="">
+            <p class="desc"></p>
+            <i class="coupon" style="font-size: 22px;line-height: 40px;"><span class="tag"></span></i>
+          </div>
+          <div class="hot-info">
+            <div>
+              <p>
+                <span class="banner-title text-red">测试 - 测试 - 测试</span>
+              </p>
+              <p class="flex info">
+                <span style="flex:1">船名:<span class="boat"></span></span>
+                <span style="width: 40%;">出发时间:<span class="time"></span></span>
+                <span style="flex:1">晚数:<span class="days"></span></span>
+              </p>
+            </div>
+            <div class="room" style="position:relative;width:100%;font-size:22px;padding-top:20px;display:block;color:#a42625;border-top:1px solid #a4262f">
+              双人阳台房
+            </div>
+            <div class="flex price-info">
+              <div class="flex" style="width: 100%;">
+                <!-- <div style="width: 100%;"> -->
+                  <div class="original">
+                    <p style="font-size: 18px;">第1/2人零售指导价</p>
+                    <p><b class="number"><span class="text-blackfont"><span class="text-blackfont">¥</span></span><span class="currPriceOne">3333</span>元</b>/人起</p>
+                  </div>
+                  <div class="current text-red">
+                    <p style="font-size: 18px;" class="price-desc">第1/2人早订特惠价</p>
+                    <p style="font-size: 18px;"><span class="number"><span class="text-blackfont"><span class="text-blackfont">¥</span></span><span class="origPriceOne">3333</span>元</span>/人起</p>
+                    <span style="display:none">含税价为船票加港务税费总价</span>
+                  </div>
+                <!-- </div> -->
+                <!-- <div style="flex:1">
+                  <div class="current">
+                    <p>第3/4人会员专享价(含税)</p>
+                    <p><b class="number">¥<span class="currPriceThree">9999</span>元</b>/人起</p>
+                  </div>
+                  <div class="original">
+                    <p>第3/4人零售倡导价(含税)</p>
+                    <p><span class="number">¥<span class="origPriceThree">9999</span>元</span>/人起</p>
+                  </div>
+                </div> -->
+              </div>
+              <!-- <div class="text-red special-price">
+                <h3>4人人均含税价</h3>
+                <p><span class="four-price">¥<span class="fourAvgPrice">9999</span>元</span></p>
+                <p>含税价为船票加港务税费总价</p>
+              </div> -->
+            </div>
+            <div>
+              <a class="text-center link" href="">立即抢购</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <!-- tab模板 -->
+    <template id="tabBtn">
+      <li><a href="javascript:;"></a></li>
+    </template>
+    <template id="bannerLi">
+      <li>
+        <div class="flex" style="padding-bottom: 0;margin-bottom: 30px;">
+          <div style="height: 0;">
+            <img class="banner-img" src="http://placehold.it/600x224" alt="">
+            <i class="coupon" style="font-size:14px;line-height:20px;position:relative;width:150px;margin-left:10px;bottom:150px;text-align:center"><span class="tag"></span></i>
+          </div>
+          <div class="banner-right" style="margin-bottom: 0;">
+            <p class="text-red banner-title"><span class></span></p>
+            <p>船名：<span class="boat"></span></p>
+            <p>出发时间：<span class="time"></span></p>
+            <p>晚数：<span class="days"></span></p>
+          </div>
+        </div>
+        <h3 class="text-red text-center room" style="font-size: 18px;padding: 0 20px;margin-bottom: 13px;"></h3>
+        <div class="flex" style="padding-top: 0;font-weight: bold;">
+          <div class="original" style="font-size: 16px;flex: 1;">
+            <p style="font-size: 22px;">第1/2人零售指导价</p>
+            <p><b><span class="text-blackfont">¥</span><span class="origPrice number"></span>元</b>/人起</p>
+          </div>
+          <div class="current text-red" style="font-size: 16px;flex: 1;">
+            <p style="font-size: 22px;" class="price-desc-tab">第1/2人限时优惠价</p>
+            <p><b><span class="text-blackfont">¥</span><span class="currPrice number"></span>元</b>/人起</p>
+          </div>
+        </div>
+        <div style="padding-top: 0;">
+          <a class="text-center link">立即抢购</a>
+        </div>
+      </li>
+    </template>
+    <template id="explain">
+      <div class="aftercampaign text-center flex">
+        <!--<a href="javascript:_a.push(['_trackEvent', 'link', 'click', '更多航线', '']),setTimeout(function(){location.href='https://mobile.rcclchina.com.cn/Rccl.Cruise/CruiseSearch/Search'}, 200)">-->
+        <a href="https://mobile.rcclchina.com.cn/Rccl.Cruise/CruiseSearch/Search">
+          <img src="img/morebtn.png" alt="">
+        </a>
+        <!--<a href="javascript:_a.push(['_trackEvent', 'link', 'click', '返回官网', '']),setTimeout(function(){location.href='https://mobile.rcclchina.com.cn/'}, 200)">-->
+        <a href="https://mobile.rcclchina.com.cn/">
+          <img src="img/backbtn.png" alt="">
+        </a>
+      </div>
+      <div class="explain">
+        <h5 style="font-size:24px;font-weight:normal">价格说明</h5>
+        <div class="text" style="font-size:12px; line-height:1.4">
+            1.	本页面出现的“早订特惠价”，是指为鼓励客人尽早计划行程并确认预订而对部分航线或房型特别开放的一种特惠价，是在零售指导价或优惠价的基础上，再享受额外价格优惠的船票价，适用“收费退订”政策。<br><br>
+            2.	本页面出现的优惠价，是指在零售指导价的基础上，享受了品牌特惠和适用的限时闪惠（针对特定年龄或需使用优惠券或活动码等需经验证后方可享受的限时闪惠除外）后的船票价，适用“常规退订”政策。<br><br>
+            3.	本页面出现的零售指导价，即游轮公司根据市场情况制定和建议的船票零售价，并非中国法律法规所定义的“原价”，且可能由游轮公司不时调整，适用“常规退订”政策。<br><br>
+            4.	本页面出现的价格标注“（含税）”的，则该价格已包含了在售房型相应的船票价格以及港务税费。<br><br>
+            6.	以上价格均未包含游轮服务费或其它收费或自费项目，并可能因实时库存变更、网络延迟或缓存等因素造成一定的误差，正式价格请以最终订单显示为准。                   <br><br>  
+            5.	 本页面出现的价格标注“/人起”的，则该价格为各个在售房型根据人均计算的起价。人均价格仅为网页显示便利之目的而提供，同舱房每位客人的船票价会因入住人数和适用优惠而有所不同，请以最终订单显示为准。
+        </div>
+      </div>
+      <div class="explain">
+        <h5 style="font-size:24px;font-weight:normal">促销规则</h5>
+        <div class="text" style="font-size:12px; line-height:1.4">
+            1． 2月1日至2月14日期间，任意客人通过皇家加勒比官方网站、官方微信及电话渠道的新预订以下航次（虚拟房型WS/XB/YO/ZI除外）即可享受限时优惠活动： <br><br>
+            【上海出发海洋量子号】预订量子号2019年2月15日出发的航次，内舱房型在品牌特惠基础上可享300元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；预订量子号2月20日出发的航次，内舱及海景房型在品牌特惠基础上可享700元/舱的额外立减；阳台房型在品牌特惠基础上可享1000元/舱的额外立减；套房房型在品牌特惠基础上可享1200元/舱的额外立减；预订量子号2月25日及3月2日出发的航次，内舱及海景房型在品牌特惠基础上可享300元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；套房房型在品牌特惠基础上可享1200元/舱的额外立减；预订量子号2019年3月7日及4月26日出发的航次，内舱及海景房型在品牌特惠基础上可享300元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；套房房型在品牌特惠基础上可享1200元/舱的额外立减；预订量子号2019年3月21日及4月2日出发的航次内舱房型在品牌特惠基础上可享300元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；预订量子号2019年5月24日出发的航次，内舱及海景房型在品牌特惠基础上可享400元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；套房房型在品牌特惠基础上可享1200元/舱的额外立减。<br><br>
+            【天津出发海洋量子号】预订量子号2019年6月23日出发的航次，内舱及海景房型在品牌特惠基础上可享200元/舱的额外立减；阳台房型在品牌特惠基础上可享588元/舱的额外立减；套房房型在品牌特惠基础上可享800元/舱的额外立减；
+            <br><br>
+            【上海出发海洋光谱号】预订光谱号2019年6月6日出发的航次，所有双人房型在品牌特惠基础上赠双人高速无线上网；预订光谱号7月2日，7月7日，7月23日，7月28日， 8月6日，8月15日出发的航次，内舱、海景及阳台房型在品牌特惠基础上可享1000元/舱的额外立减。
+            <br><br>
+            【香港出发海洋航行者号】预订航行者号2019年7月31日及8月14日出发的航次，内舱、海景及阳台房型在品牌特惠基础上可享1000元/舱的额外立减；套房房型在品牌特惠基础上可享1600元/舱的额外立减；预订航行者号2019年8月21日出发的航次，内舱、海景及阳台房型在品牌特惠基础上可享600元/舱的额外立减；套房房型在品牌特惠基础上可享1200元/舱的额外立减；<br><br>
+
+            2.以上航次虚拟随机房型WS/XB/YO/ZI不参加任何促销活动，2019年单人房2F/2W的促销金额为以上金额的一半。<br><br>
+
+            3. 享受本活动的预订，必须保证每一间预订舱房所有客人的姓名及相关预订信息，自预订之日起至航次结束保持不变；如有改变，则该舱房不再享受本活动。<br><br>
+            4. 皇家加勒比游轮船务（中国）有限公司在法律允许的范围内对本活动保留解释权。
+        </div>
+      </div>
+    </template>
+    <script type="text/javascript" src="js/resLoader.js"></script>
+    <!--<script src="js/index.js?v=20"></script> -->
+	<!--<script src="js/ajax.js?v=20"></script> -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script> -->
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+		document.write("<script type='text/javascript' src='js/index.js?v=" + version + "'><\/script>");
+		document.write("<script type='text/javascript' src='js/ajax.js?v=" + version + "'><\/script>");
+	</script>
+    
+  </body>
+</html>

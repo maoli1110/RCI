@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>皇家加勒比</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      var phoneWidth = parseInt(window.screen.width);
+      var phoneScale = phoneWidth /750;
+      var ua = navigator.userAgent;
+      if(/Android (\d+\.\d+)/.test(ua)) {
+          var version = parseFloat(RegExp.$1);
+          if(version > 2.3) {
+              document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+          } else {
+              document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+          }
+      } else {
+          document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+      }
+    </script>
+    <script type='text/javascript'>
+      !function (e, t, n, g, i) { e[i] = e[i] || function () { (e[i].q = e[i].q || []).push(arguments) }, n = t.createElement("script"), tag = t.getElementsByTagName("script")[0], n.async = 1, n.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + g, tag.parentNode.insertBefore(n, tag) }(window, document, "script", "http://assets.growingio.com/2.1/gio.js", "gio");
+      gio('init', 'a8566cfbe0547f7a', {});
+
+      gio('send');
+    </script>
+
+    <!--baidu track-->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a2e296d8e3356d478938fcfe6a8d4890";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script type="text/javascript" language="javascript" src="https://tongji.baidu.com/static/tongji/analytics/hm-rcl-m.js"></script>
+    <script>RCLTracker._setAutoTrackingTags(['a', 'button', 'label', 'span', 'img', 'p', 'div']);</script>
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <script type="text/javascript">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'itm.start': new Date().getTime(), event: 'itm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'ITM_dataLayer' ? '&l=' + l : '';
+        j.async = true; j.src = 'https://itm.xfyun.cn/itm.js/?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'ITM_dataLayer', 'ITM-5a83e9b9');
+    </script>
+
+    <!-- utag -->
+    <script type="text/javascript">
+      (function(a,b,c,d){
+        a='http://tags.tiqcdn.com/utag/rccl/gdp-rcl-china/prod/utag.js'; //'dev','qa' are other values instead of 'prod'
+        b=document;c='script';d=b.createElement(c);d.src=a;
+        d.type='text/java'+c;d.async=true;
+        a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a)
+      })();
+    </script>
+	
+	<script type="text/javascript">
+		//获取用户openid
+		var openid = decodeURIComponent(getQueryVariable('info'));
+	
+		/**
+		 * 统计信息收集开始
+		 * @type @exp;_a
+		 */
+		var _a = _a || {
+			si: '70201901220000', //统计项目key
+			openid: openid,//微信openid
+			uuid: '',//微信uuid
+			uid: '',//项目自带用户ID
+			gps: '',//位置gps信息
+			nick: '',//用户昵称
+			mobile: '',//用户手机号码
+		};
+		(function() {
+			var ana = document.createElement("script");
+			ana.src = "http://log.itsforcampaign.com/analytics.js";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(ana, s);
+		})();
+		/**
+		 * 统计信息收集结束
+		 * 事件监测_a.push([事件类型, 事件对象, 事件额外信息]);
+		 * 事件类型 (必选)
+		 *          click："点击",
+		 *          share："分享",
+		 *          scorll: "滚动",
+		 *          play: "播放",
+		 *          download: "下载",
+		 *          pageview: "页面浏览"
+		 * 事件对象 (必选)   
+		 *         按钮，图层，视频，等
+		 */
+		 
+		 /**
+		 *事件监听
+		 *luck_draw 摇一摇
+		 *get_coupon 获取礼包
+		 *
+		 */
+		 function clickEvent(eventname)
+		 {
+			_a.push(['click','button',eventname])；
+		 }
+		 
+		 /**
+		 *跳转检测
+		 *linename 命名规范 click_line(航线名) 航线点击
+		 *url 跳转的URL
+		 */
+		 function clickShip(linename , url)
+		 {
+			_a.push(['redirect','button',linename]),setTimeout(function(){location.href=url}, 200)
+		 }
+	</script>
+  </head>
+  <body>
+    
+    <template id="tabBtn">
+      <li><a href="javascript:;"></a></li>
+    </template>
+    <template id="bannerLi">
+      <li>
+        <img class="banner-img" src="http://placehold.it/600x224" alt="">
+        <div class="flex">
+          <div class="banner-left">
+            <p><span class="banner-title"></span><i class="hot text-center">超抢手!</i></p>
+            <p>船名：<span class="boat"></span></p>
+            <p>出发时间：<span class="time"></span></p>
+          </div>
+          <div class="banner-right">
+            <h3 class="text-center room"></h3>
+            <div class="flex">
+              <div class="original">
+                <p>第1/2人零售倡导价(含税)</p>
+                <p><span class="origPrice"></span>/人起</p>
+              </div>
+              <div class="current">
+                <p>第1/2人限时优惠价(含税)</p>
+                <p><span class="origPrice"></span>/人起</p>
+              </div>
+            </div>
+            <a class="text-center link">立即抢购</a>
+          </div>
+        </div>
+      </li>
+    </template>
+    <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script> -->
+  </body>
+</html>

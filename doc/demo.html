@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+    <meta charset="UTF-8">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">  
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">  
+    <meta HTTP-EQUIV="expires" CONTENT="0">  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,user-scalable=no">
+	<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+	<label id="userInfo">用户名<label>
+	<button style="width:50%;height:60px;" onclick="fwxlogin();">非微信登入</button>
+	<button style="width:50%;height:60px;" onclick="wxlogin();">微信登入</button>
+	<button style="width:50%;height:60px;" onclick="yhq();">送优惠券</button>
+	
+
+</body>
+
+<script type="text/javascript">
+	
+	window.share = {
+        imgUrl : window.location.origin + '/campaign/cnycamp2019mb/images/share.png?v=1.1',
+		link : 'https://mobile.rcclchina.com.cn/campaign/cnycamp2019mb/',
+		title : "这个加班夜，我被6个男孩子同时撩了......",
+		desc : "稳住，我的少女心！",
+		success: function () {
+		// 用户确认分享后执行的回调函数
+		},
+		cancel: function () {
+		// 用户取消分享后执行的回调函数
+		}
+    }
+	
+	var campaignId = "f426db4e398c92f45179dcb5ed6865b3727d7c57cc79af25c336907e8b66e948";
+	//是否有token
+	var accessToken = decodeURIComponent(getQueryVariable('accessToken'));
+	
+	var username = "";
+	
+	var openid = "";
+	
+	var version = "30";
+	
+	$(function() {		
+	
+		if (accessToken != "false")
+		{
+			alert(accessToken);
+		}
+		
+		//验证是否登入
+		$.ajax({
+			 url: "https://mobile.rcclchina.com.cn/Rccl.Campaign/Campaign/CheckLogin",
+			 type: "GET",
+			 data: {
+			   campaignId: campaignId
+			 },
+			 success: function(response){
+			   if (response.success){
+				   accessToken = response.data
+				   getUserInfo()
+				}
+			 }
+		});
+		
+		
+		
+		//获取用户信息
+		//var userurl = "https://www.rcclchina.com.cn/Rccl.Campaign/Campaign/GetUser? campaignId={campaignId}&accessToken={accessToken}";
+		
+		//发送优惠券
+		//var yhq = "https://www.rcclchina.com.cn/Api/Rccl.Coupon/CouponApi/GiveUserCoupon";
+		
+		//分享设置
+		var url = "https://mobile.rcclchina.com.cn/wechatadmin/wechatapi/Signature?url="+encodeURIComponent(window.location.href)+"&tenantId=2";
+		$.get(url, function(result){			
+			var data = result["data"];
+			 wx.config({
+				debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+				appId: data.AppId, // 必填，公众号的唯一标识
+				timestamp: data.Timestamp, // 必填，生成签名的时间戳
+				nonceStr: data.NonceStr, // 必填，生成签名的随机串
+				signature: data.Signature,// 必填，签名，见附录1
+				jsApiList: [
+					'checkJsApi',
+					'onMenuShareTimeline',
+					'onMenuShareAppMessage',
+					'translateVoice',
+					'startRecord',
+					'stopRecord',
+					'onVoiceRecordEnd',
+					'playVoice',
+					'onVoicePlayEnd',
+					'pauseVoice',
+					'stopVoice',
+					'uploadVoice',
+					'downloadVoice',
+				] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+			});
+
+			wx.ready(function () {
+				
+				wxcheck();
+				function wxcheck(){
+					wx.checkJsApi({
+						jsApiList: [
+							'onMenuShareTimeline',
+							'onMenuShareAppMessage'
+						],
+						success: function (res) {
+							//alert(JSON.stringify(res));
+						}
+					});
+				}
+				
+				wx.onMenuShareTimeline({
+					imgUrl : window.share.imgUrl,
+					link : window.share.link,
+					title : window.share.title,
+					desc : window.share.title,
+					success: function () {
+						// 用户确认分享后执行的回调函数
+						//    if(window.share.suc) window.share.suc();
+						// if(_hmt){
+						//    _hmt.push(['_trackEvent','click', "分享朋友圈"]);
+						// }
+					},
+					cancel: function () {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+
+
+				wx.onMenuShareAppMessage({
+					imgUrl : window.share.imgUrl,
+					link : window.share.link,
+					title : window.share.title,
+					desc : window.share.desc,
+					trigger: function (res) {
+						//	alert('用户点击分享到朋友圈');
+					},
+					success: function (res) {
+						// if(_hmt){
+						//    _hmt.push(['_trackEvent','click', "分享朋友"]);
+						// }
+						//	alert('已分享');
+						//    if(window.share.suc) window.share.suc();
+						//WeixinJSBridge.call('closeWindow');
+					},
+					cancel: function (res) {
+						//	alert('已取消');
+					},
+					fail: function (res) {
+						//	alert(JSON.stringify(res));
+					}
+				});
+				
+
+			});
+		});	
+		
+		
+	});
+	
+	function fwxlogin()
+	{
+		//如果未登入则跳到注册登入
+		var returnurl = "https://mobile.rcclchina.com.cn/campaign/cnycamp2019mb/index.html?v="+version+"&campaignId="+campaignId;
+		window.location.href = "https://mobile.rcclchina.com.cn/Orchard.Rccl.Users/Login/Login?returnUrl="+encodeURIComponent(returnurl);
+	}
+	
+	function wxlogin()
+	{
+		//var url = "https://mobile.rcclchina.com.cn/wechatadmin/WechatApi/oauth2?tenantId=1&redirect_uri="+encodeURIComponent(window.location.href);+"&scope=snsapi_base";
+		
+		//window.location.href="https://mobile.rcclchina.com.cn/wechatadmin/WechatApi/oauth2?tenantId=1&redirect_uri="+encodeURIComponent(window.location.href)+"&scope=snsapi_base";
+		
+		//判断是否有openid
+		var openid = decodeURIComponent(getQueryVariable('info'));	
+		
+		//有openid 则通过openid 获取用户信息
+		if (openid != "" && openid != null && openid != "undefind")
+		{
+			var url = "https://www.rcclchina.com.cn/api/Orchard.Rccl.Users/LoginApi/CheckRegistedByOpenId?openId="+openid;
+			
+			$.get(url, function(result){
+				
+				//存在用户
+				if (result["code"] == 0)
+				{
+					var data = result["data"];
+					username = data.username;
+					
+					$("#userInfo").html(username);
+				}
+				else
+				{
+					//如果未登入则跳到注册登入
+					var returnurl = "https://mobile.rcclchina.com.cn/campaign/cnycamp2019mb/index.html?v="+version+"&campaignId="+campaignId;
+					window.location.href = "https://mobile.rcclchina.com.cn/Orchard.Rccl.Users/Login/Login?returnUrl="+encodeURIComponent(returnurl);
+				}
+			});
+		}
+		else
+		{
+			//如果未登入则跳到注册登入
+			var returnurl = "https://mobile.rcclchina.com.cn/campaign/cnycamp2019mb/index.html?v="+version+"&campaignId="+campaignId;
+			window.location.href = "https://mobile.rcclchina.com.cn/Orchard.Rccl.Users/Login/Login?returnUrl="+encodeURIComponent(returnurl);
+		}	
+		
+	}
+	
+	//获取用户信息
+	function getUserInfo(){
+	  if (accessToken&& accessToken.length > 0){
+		$.ajax({
+			 url: "https://mobile.rcclchina.com.cn/Rccl.Campaign/Campaign/GetUser",
+			 type: "GET",
+			 data: {
+			   campaignId: campaignId,
+			   accessToken: accessToken
+			 },
+			 success: function(response){
+			   console.log(response);
+			   username = response["username"];
+			   //$("#userInfo").html(JSON.stringify(response))
+			 }
+		 })
+
+
+		}
+	}
+	
+	//赠送优惠券
+	function yhq()
+	{
+		//生成优惠券码
+		var str = Date.parse(new Date())/1000 + "";
+		var couponCode = randomWord(false,5)+str.substring(3);
+		
+		$.ajax({
+			 url: "https://www.rcclchina.com.cn/Api/Rccl.Coupon/CouponApi/GiveUserCoupon",
+			 type: "POST",
+			 data: {
+			   couponCode: couponCode,
+			   as400: "11GF",
+			   username:username,
+			   extraCode:"ceshi1"
+			 },
+			 success: function(response){
+			   console.log(response)
+			   $("#userInfo").html(JSON.stringify(response))
+			 }
+		 });
+
+
+	}
+
+	
+	function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+	
+	//随机串
+	function randomWord(randomFlag, min, max){
+		var str = "",
+			range = min,
+			arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+	 
+		// 随机产生
+		if(randomFlag){
+			range = Math.round(Math.random() * (max-min)) + min;
+		}
+		for(var i=0; i<range; i++){
+			pos = Math.round(Math.random() * (arr.length-1));
+			str += arr[pos];
+		}
+		return str;
+	}
+
+
+</script>
+</html>
